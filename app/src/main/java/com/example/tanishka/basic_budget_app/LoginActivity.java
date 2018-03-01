@@ -89,6 +89,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
+                goToHome(view);
             }
         });
 
@@ -353,10 +354,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     /** Called when the user taps the login button */
     public void goToHome(View view) {
         Intent intent = new Intent(this, HomeScreen.class);
-        //EditText editText = (EditText) findViewById(R.id.editText);
-        //String message = editText.getText().toString();
-        //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+        this.finish(); // this necessary?
 
 
 
