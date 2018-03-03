@@ -25,8 +25,11 @@
         </activity>
         <activity
             android:name=".HomeScreen"
-            android:parentActivityName=".LoginActivity"></activity>
-        <activity android:name=".ViewBudget"></activity>
+            android:parentActivityName=".LoginActivity" />
+        <activity android:name=".ViewBudget" />
+        <activity android:name=".ImportGoogle" />
+        <activity android:name=".ExportGoogle" />
+        <activity android:name=".UpdateBalance"></activity>
     </application>
 
 </manifest>

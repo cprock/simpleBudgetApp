@@ -355,10 +355,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void goToHome(View view) {
         Intent intent = new Intent(this, HomeScreen.class);
         startActivity(intent);
-        this.finish(); // this necessary?
-
-
-
     }
 
 }
