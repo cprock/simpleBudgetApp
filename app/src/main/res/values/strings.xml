@@ -13,4 +13,15 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- Strings related to home screen -->
+    <string name="view_budget">View Budget</string>
+    <string name="import_google">Import from Google Drive</string>
+    <string name="export_google">Export to Google Drive</string>
+    <string name="account_info">My Account</string>
+    <string name="to_web_view">Shop</string>
+
+
+
+
 </resources>

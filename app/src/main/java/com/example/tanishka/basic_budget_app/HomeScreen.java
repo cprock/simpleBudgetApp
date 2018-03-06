@@ -10,10 +10,10 @@ import android.widget.Button;
 public class HomeScreen extends AppCompatActivity {
 
     protected Button viewBudget; // to see what money is available to spend (i.e. not on bills)
-    protected Button fromGoogle; // import excel spreadsheet from Google drive
-    protected Button toGoogle; // export into an excel spreadsheet on Google drive
-    protected Button updateBal; // to edit biweekly salary or current balance
-    protected Button webView; // to go to Amazon and see what is available for purchase
+    protected Button importFromGoogle; // import excel spreadsheet from Google drive
+    protected Button exportToGoogle; // export into an excel spreadsheet on Google drive
+    protected Button editAccountInfo; // to edit biweekly salary or current balance
+    protected Button toWebView; // to go to Amazon and see what is available for purchase
 
 
     @Override
@@ -30,27 +30,35 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        fromGoogle = (Button) findViewById(R.id.fromGoogle);
-        fromGoogle.setOnClickListener(new View.OnClickListener(){
+        importFromGoogle = (Button) findViewById(R.id.fromGoogle);
+        importFromGoogle.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 // call method to go to import from Google
                 toImportGoogle();
             }
         });
 
-        toGoogle = (Button) findViewById(R.id.toGoogle);
-        toGoogle.setOnClickListener(new View.OnClickListener(){
+        exportToGoogle = (Button) findViewById(R.id.toGoogle);
+        exportToGoogle.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 // call method to go to export to Google
                 toExportGoogle();
             }
         });
 
-        updateBal = (Button) findViewById(R.id.updateBal);
-        updateBal.setOnClickListener(new View.OnClickListener(){
+        editAccountInfo = (Button) findViewById(R.id.updateBal);
+        editAccountInfo.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 // call method to update balance screen
                 updateBalance();
+            }
+        });
+
+        toWebView = (Button) findViewById(R.id.webView);
+        toWebView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                // call method to go to webview
+                toWebViewActivity();
             }
         });
     }
@@ -58,30 +66,36 @@ public class HomeScreen extends AppCompatActivity {
 
     // helper methods to build all intents for different screens
 
-    public void toViewBudget(){
+    private void toViewBudget(){
         // intent for view budget screen
         Intent viewBudgetScreen = new Intent(this, ViewBudget.class);
         startActivity(viewBudgetScreen);
     }
 
 
-    public void toImportGoogle(){
+    private void toImportGoogle(){
         // intent for importing from Google screen
         Intent toImportGoogle = new Intent(this, ImportGoogle.class);
         startActivity(toImportGoogle);
     }
 
 
-    public void toExportGoogle(){
+    private void toExportGoogle(){
         // intent for exporting to Google screen
         Intent toExportGoogle = new Intent(this, ExportGoogle.class);
         startActivity(toExportGoogle);
     }
 
-    public void updateBalance(){
+    private void updateBalance(){
         // intent for editing balance and/or salary
         Intent toUpdateBal = new Intent(this, UpdateBalance.class);
         startActivity(toUpdateBal);
+    }
+
+    private void toWebViewActivity(){
+        // intent for editing balance and/or salary
+        Intent toWebViewActivity = new Intent(this, AmazonActivity.class);
+        startActivity(toWebViewActivity);
     }
 
 
