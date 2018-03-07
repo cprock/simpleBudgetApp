@@ -72,7 +72,6 @@ public class UpdateBalance extends AppCompatActivity {
                 //for testing purposes: decryptText(ALIAS, encryptor);
 
                 goToViewBudget(accountBalance);
-
             }
         });
     }

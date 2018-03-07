@@ -28,4 +28,14 @@
     <string name="bank_account_num">Enter your bank account number</string>
 
 
+    <!-- Strings related to view-budget screen -->
+    <string name="budget_bal">Account Balance</string>
+    <string name="plus">+</string>
+    <string name="income">Enter Total Income</string>
+    <string name="minus">-</string>
+    <string name="expenses">Enter Total Expenses</string>
+    <string name="disp_income">Disposable Income</string>
+    <string name="calculate">Calculate Disposable Income</string>
+
+
 </resources>

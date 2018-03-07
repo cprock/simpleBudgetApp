@@ -29,6 +29,7 @@
             android:name=".HomeScreen"
             android:parentActivityName=".LoginActivity">
 
+
         </activity>
         <activity android:name=".ViewBudget" />
         <activity android:name=".ImportGoogle" />
