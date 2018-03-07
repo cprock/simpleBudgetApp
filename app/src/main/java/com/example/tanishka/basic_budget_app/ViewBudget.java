@@ -11,5 +11,8 @@ public class ViewBudget extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_budget);
         Intent intent = getIntent();
+        String account_balance = intent.getStringExtra(UpdateBalance.BALANCE);
+
+        Double balance = Double.parseDouble(account_balance);
     }
 }
