@@ -28,20 +28,21 @@
         <activity
             android:name=".HomeScreen"
             android:parentActivityName=".LoginActivity">
+
+        </activity>
+        <activity android:name=".ViewBudget" />
+        <activity android:name=".ImportGoogle" />
+        <activity android:name=".ExportGoogle" />
+        <activity android:name=".UpdateBalance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewBudget" />
-        <activity android:name=".ImportGoogle" />
-        <activity android:name=".ExportGoogle" />
-        <activity android:name=".UpdateBalance" />
         <activity android:name=".AmazonActivity">
             <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
                 android:value="true" />
-
         </activity>
     </application>
 

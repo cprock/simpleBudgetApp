@@ -6,22 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.tanishka.basic_budget_app.UpdateBalance">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="56dp"
-        android:text="@string/instruction"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/balance"
         android:layout_width="316dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="144dp"
         android:hint="@string/balance"
         android:imeActionId="6"
         android:imeActionLabel="@string/action_sign_in_short"
@@ -29,24 +19,59 @@
         android:inputType="textPassword|numberDecimal"
         android:maxLines="1"
         android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank_name" />
+
+    <EditText
+        android:id="@+id/bank_name"
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="51dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="62dp"
+        android:hint="@string/bank_name"
+        android:imeActionId="6"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionUnspecified"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/account_num"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/account_num"
+        android:layout_width="316dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="91dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:hint="@string/bank_account_num"
+        android:imeActionId="6"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/balance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank_name" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/set_up_account"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginBottom="296dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="121dp"
         android:text="@string/create_account"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/balance"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.345" />
 
 </android.support.constraint.ConstraintLayout>

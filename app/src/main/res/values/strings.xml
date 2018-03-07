@@ -22,9 +22,10 @@
     <string name="to_web_view">Shop</string>
 
     <!-- Strings related to view-account screen -->
-    <string name="balance">$0.00</string>
-    <string name="instruction">Enter your balance:</string>
-    <string name="create_account">Create My Account</string>
+    <string name="balance">Enter your account balance: $0.00</string>
+    <string name="create_account">Set Up My Account</string>
+    <string name="bank_name">Enter your bank\'s name</string>
+    <string name="bank_account_num">Enter your bank account number</string>
 
 
 </resources>
