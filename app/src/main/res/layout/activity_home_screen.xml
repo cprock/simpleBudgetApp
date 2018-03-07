@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/updateBal"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_alignEnd="@+id/viewBudget"
@@ -21,6 +22,7 @@
 
     <Button
         android:id="@+id/fromGoogle"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="51dp"
         android:layout_above="@+id/toGoogle"
@@ -35,6 +37,7 @@
 
     <Button
         android:id="@+id/viewBudget"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="145dp"
         android:layout_height="77dp"
         android:layout_alignParentStart="true"
@@ -51,6 +54,7 @@
 
     <Button
         android:id="@+id/toGoogle"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/updateBal"
@@ -66,6 +70,7 @@
 
     <Button
         android:id="@+id/webView"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/toGoogle"

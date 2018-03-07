@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+
 
 
     <application
@@ -27,7 +27,13 @@
         </activity>
         <activity
             android:name=".HomeScreen"
-            android:parentActivityName=".LoginActivity" />
+            android:parentActivityName=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ViewBudget" />
         <activity android:name=".ImportGoogle" />
         <activity android:name=".ExportGoogle" />
@@ -35,12 +41,11 @@
         <activity android:name=".AmazonActivity">
             <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
                 android:value="true" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
+
+    <!--- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
