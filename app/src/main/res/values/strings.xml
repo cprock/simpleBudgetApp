@@ -10,14 +10,10 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">Invalid Login Information</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
 
     <!-- Strings related to home screen -->
     <string name="view_budget">View Budget</string>
-    <string name="import_google">Import from Google Drive</string>
-    <string name="export_google">Export to Google Drive</string>
+    <string name="to_google">Import/Export Using Google Drive</string>
     <string name="account_info">My Account</string>
     <string name="to_web_view">Shop</string>
 
@@ -37,5 +33,9 @@
     <string name="disp_income">Disposable Income</string>
     <string name="calculate">Calculate Disposable Income</string>
 
+
+    <!-- Strings related to google-drive screen -->
+    <string name="export_label">Create File on Google Drive</string>
+    <string name="import_label">Open Google Drive</string>
 
 </resources>

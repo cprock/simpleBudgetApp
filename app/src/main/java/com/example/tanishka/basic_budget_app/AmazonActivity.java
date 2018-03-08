@@ -1,9 +1,11 @@
 package com.example.tanishka.basic_budget_app;
 
 import android.net.Uri;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -54,6 +56,18 @@ public class AmazonActivity extends AppCompatActivity {
         // create a WebViewClient to open links clicked by user within THE SAME WEBVIEW (Consider changing this!)
 
         amazonWebView.setWebViewClient(new MyWebViewClient());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

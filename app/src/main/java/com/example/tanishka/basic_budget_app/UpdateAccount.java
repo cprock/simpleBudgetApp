@@ -2,18 +2,16 @@ package com.example.tanishka.basic_budget_app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
-import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -31,14 +29,14 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-public class UpdateBalance extends AppCompatActivity {
+public class UpdateAccount extends AppCompatActivity {
 
 
-    public static final String BALANCE = "ACCOUNT_BALANCE";
+    //public static final String BALANCE = "ACCOUNT_BALANCE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final EditText inputBalance;
+        //final EditText inputBalance;
         final EditText inputBankName;
         final EditText inputAccountNum;
         final AccountEncryptor encryptor;
@@ -46,9 +44,9 @@ public class UpdateBalance extends AppCompatActivity {
         final String ALIAS = "SECURE_ACCOUNT";
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_balance);
+        setContentView(R.layout.activity_update_account);
 
-        inputBalance = (EditText) findViewById(R.id.balance);
+        //inputBalance = (EditText) findViewById(R.id.balance);
         inputBankName = (EditText) findViewById(R.id.bank_name);
         inputAccountNum = (EditText) findViewById(R.id.account_num);
 
@@ -61,7 +59,7 @@ public class UpdateBalance extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Double accountBalance = Double.parseDouble(inputBalance.getText().toString());
-                String accountBalance = inputBalance.getText().toString();
+                //String accountBalance = inputBalance.getText().toString();
                 String bankName = inputBankName.getText().toString();
                 String accountNum = inputAccountNum.getText().toString();
                 final String privateInfo = bankName + ":" + accountNum;
@@ -71,7 +69,8 @@ public class UpdateBalance extends AppCompatActivity {
 
                 //for testing purposes: decryptText(ALIAS, encryptor);
 
-                goToViewBudget(accountBalance);
+                //goToViewBudget(accountBalance);
+                goToHome();
             }
         });
     }
@@ -154,9 +153,21 @@ public class UpdateBalance extends AppCompatActivity {
     }
 
     // go to view budget activity
-    private void goToViewBudget(String balance) {
-        Intent intent = new Intent(this, ViewBudget.class);
-        intent.putExtra(BALANCE, balance);
+    private void goToHome() {
+        Intent intent = new Intent(this, HomeScreen.class);
+        //intent.putExtra(BALANCE, balance);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

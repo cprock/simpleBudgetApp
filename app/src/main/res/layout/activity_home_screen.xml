@@ -21,36 +21,16 @@
         app:layout_constraintVertical_bias="0.142" />
 
     <Button
-        android:id="@+id/fromGoogle"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_above="@+id/toGoogle"
-        android:layout_alignStart="@+id/viewBudget"
-        android:layout_marginBottom="29dp"
-        android:text="@string/import_google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
-
-    <Button
         android:id="@+id/viewBudget"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="145dp"
-        android:layout_height="77dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/fromGoogle"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="40dp"
         android:text="@string/view_budget"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />
+        app:layout_constraintTop_toBottomOf="@+id/updateBal" />
 
     <Button
         android:id="@+id/toGoogle"
@@ -59,14 +39,15 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/updateBal"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="18dp"
-        android:text="@string/export_google"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="34dp"
+        android:text="@string/to_google"
+        app:layout_constraintBottom_toTopOf="@+id/webView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667" />
+        app:layout_constraintTop_toBottomOf="@+id/viewBudget" />
 
     <Button
         android:id="@+id/webView"
@@ -80,6 +61,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintVertical_bias="0.732" />
 
 </android.support.constraint.ConstraintLayout>

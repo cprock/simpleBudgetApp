@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.example.tanishka.basic_budget_app.ViewBudget">
 
+    <EditText
+        android:id="@+id/balance"
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="33dp"
+        android:hint="@string/balance"
+        android:imeActionId="6"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword|numberDecimal"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/budget"
         android:layout_width="wrap_content"
@@ -42,43 +60,18 @@
         app:layout_constraintTop_toBottomOf="@+id/plus" />
 
     <TextView
-        android:id="@+id/bal_label"
-        android:layout_width="197dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="440dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="52dp"
-        android:layout_weight="1"
-        android:text="@string/budget_bal"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
-
-    <TextView
         android:id="@+id/budget_label"
         android:layout_width="197dp"
         android:layout_height="31dp"
+        android:layout_marginBottom="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="54dp"
         android:layout_weight="1"
         android:text="@string/disp_income"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calculate_budget" />
-
-    <TextView
-        android:id="@+id/bal"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="54dp"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bal_label"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/income_input"
@@ -92,7 +85,7 @@
         android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/plus"
-        app:layout_constraintTop_toBottomOf="@+id/bal_label" />
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
 
     <TextView
         android:id="@+id/plus"
@@ -103,7 +96,7 @@
         android:text="@string/plus"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bal_label" />
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
 
     <Button
         android:id="@+id/calculate_budget"

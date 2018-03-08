@@ -11,7 +11,7 @@ public class HomeScreen extends AppCompatActivity {
 
     protected Button viewBudget; // to see what money is available to spend (i.e. not on bills)
     protected Button importFromGoogle; // import excel spreadsheet from Google drive
-    protected Button exportToGoogle; // export into an excel spreadsheet on Google drive
+    protected Button toGoogleDrive; // export into an excel spreadsheet on Google drive
     protected Button editAccountInfo; // to edit biweekly salary or current balance
     protected Button toWebView; // to go to Amazon and see what is available for purchase
 
@@ -20,7 +20,7 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
 
         viewBudget = (Button) findViewById(R.id.viewBudget);
         viewBudget.setOnClickListener(new View.OnClickListener(){
@@ -30,19 +30,12 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        importFromGoogle = (Button) findViewById(R.id.fromGoogle);
-        importFromGoogle.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                // call method to go to import from Google
-                toImportGoogle();
-            }
-        });
 
-        exportToGoogle = (Button) findViewById(R.id.toGoogle);
-        exportToGoogle.setOnClickListener(new View.OnClickListener(){
+        toGoogleDrive = (Button) findViewById(R.id.toGoogle);
+        toGoogleDrive.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 // call method to go to export to Google
-                toExportGoogle();
+                toGoogleDriveActivity();
             }
         });
 
@@ -72,23 +65,15 @@ public class HomeScreen extends AppCompatActivity {
         startActivity(viewBudgetScreen);
     }
 
-
-    private void toImportGoogle(){
-        // intent for importing from Google screen
-        Intent toImportGoogle = new Intent(this, ImportGoogle.class);
-        startActivity(toImportGoogle);
-    }
-
-
-    private void toExportGoogle(){
+    private void toGoogleDriveActivity(){
         // intent for exporting to Google screen
-        Intent toExportGoogle = new Intent(this, ExportGoogle.class);
+        Intent toExportGoogle = new Intent(this, GoogleDriveActivity.class);
         startActivity(toExportGoogle);
     }
 
     private void updateBalance(){
         // intent for editing balance and/or salary
-        Intent toUpdateBal = new Intent(this, UpdateBalance.class);
+        Intent toUpdateBal = new Intent(this, UpdateAccount.class);
         startActivity(toUpdateBal);
     }
 

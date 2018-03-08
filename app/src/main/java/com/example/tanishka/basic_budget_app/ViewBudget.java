@@ -2,8 +2,10 @@ package com.example.tanishka.basic_budget_app;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,12 +17,11 @@ public class ViewBudget extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_budget);
-        Intent intent = getIntent();
-        String account_balance = intent.getStringExtra(UpdateBalance.BALANCE);
+
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        final TextView balanceTextView = (TextView) findViewById(R.id.bal);
-        balanceTextView.setText(account_balance);
+        final EditText balanceTextView = (EditText) findViewById(R.id.balance);
 
         final EditText  editIncome = (EditText) findViewById(R.id.income_input);
         final EditText  editExpense = (EditText) findViewById(R.id.expense_input);
@@ -44,11 +45,22 @@ public class ViewBudget extends AppCompatActivity {
                     spendingMoney.setText(moneyToSpend.toString());
                     spendingMoney.setTextColor(Color.RED);
                 }
-
-
-
-
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                //NavUtils.navigateUpFromSameTask(this);
+                Intent intent = new Intent(this, HomeScreen.class);
+                //intent.putExtra(BALANCE, balance);
+                startActivity(intent);
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

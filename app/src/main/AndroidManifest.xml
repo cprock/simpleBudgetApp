@@ -17,6 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:networkSecurityConfig="@xml/network_security_config">
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
@@ -25,24 +27,27 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
+
         <activity
-            android:name=".HomeScreen"
-            android:parentActivityName=".LoginActivity">
+            android:name=".HomeScreen">
+        </activity>
 
+        <activity android:name=".ViewBudget"
+            android:parentActivityName=".HomeScreen">
 
         </activity>
-        <activity android:name=".ViewBudget" />
-        <activity android:name=".ImportGoogle" />
-        <activity android:name=".ExportGoogle" />
-        <activity android:name=".UpdateBalance">
+        <activity android:name=".GoogleDriveActivity"
+            android:parentActivityName=".HomeScreen" />
+
+        <activity android:name=".UpdateAccount"
+            android:parentActivityName=".HomeScreen">
 
         </activity>
         <activity android:name=".AmazonActivity">
             <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
-                android:value="true" />
+                android:value="true"
+                android:parentActivityName=".HomeScreen" />
         </activity>
     </application>
 
