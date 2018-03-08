@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 public class ViewBudget extends AppCompatActivity {
 
+    private String finalBudget;
+    public static final String intent_message = "BUDGET";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +47,15 @@ public class ViewBudget extends AppCompatActivity {
                     spendingMoney.setText(moneyToSpend.toString());
                     spendingMoney.setTextColor(Color.RED);
                 }
+
+                finalBudget = "Balance: " + Double.toString(balance) + "\n"
+                        + "Income: " + Double.toString(income) + "\n"
+                        + "Expenses: " + Double.toString(expenses) + "\n"
+                        + "Disposable Income: " + Double.toString(moneyToSpend);
             }
         });
+
+
     }
 
     @Override
@@ -56,7 +65,7 @@ public class ViewBudget extends AppCompatActivity {
             case android.R.id.home:
                 //NavUtils.navigateUpFromSameTask(this);
                 Intent intent = new Intent(this, HomeScreen.class);
-                //intent.putExtra(BALANCE, balance);
+                intent.putExtra(intent_message, finalBudget);
                 startActivity(intent);
 
                 return true;

@@ -15,12 +15,16 @@ public class HomeScreen extends AppCompatActivity {
     protected Button editAccountInfo; // to edit biweekly salary or current balance
     protected Button toWebView; // to go to Amazon and see what is available for purchase
 
+    public static final String intentMessage = "FINALBUDGET";
+    String message;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        //Intent intent = getIntent();
+        Intent intent = getIntent();
+        message = intent.getStringExtra(ViewBudget.intent_message);
 
         viewBudget = (Button) findViewById(R.id.viewBudget);
         viewBudget.setOnClickListener(new View.OnClickListener(){
@@ -68,6 +72,7 @@ public class HomeScreen extends AppCompatActivity {
     private void toGoogleDriveActivity(){
         // intent for exporting to Google screen
         Intent toExportGoogle = new Intent(this, GoogleDriveActivity.class);
+        toExportGoogle.putExtra(intentMessage, message);
         startActivity(toExportGoogle);
     }
 

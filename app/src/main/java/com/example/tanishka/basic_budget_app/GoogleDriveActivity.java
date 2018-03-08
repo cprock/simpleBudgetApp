@@ -48,24 +48,21 @@ public class GoogleDriveActivity extends AppCompatActivity {
     private DriveResourceClient mDriveResourceClient;
     //private Bitmap mBitmapToSave;
     private String mStringToSave;
+    private String message;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        message = intent.getStringExtra(HomeScreen.intentMessage);
+
+        if ((message != null) && !message.equals("")){
+            mStringToSave = message;
+        } else {
+            mStringToSave = "no budget created yet";
+        }
+
         signIn();
-        mStringToSave = "test-string";
-
-        //Button exportButton = (Button) findViewById(R.id.export_google);
-        //exportButton.setOnClickListener(new View.OnClickListener() {
-          //  public void onClick(View v) {
-            //    mStringToSave = "test-string";
-          //      saveFileToDrive();
-            //}
-        //});
-
-        //saveFileToDrive();
-
-
     }
 
     /** Start sign in activity. */
